@@ -76,8 +76,8 @@ def generate_pdf_act(customer: Customer, jobs: list[Job]) -> None:
             lambda j: asdict(j), jobs
         ))
     }
-    # Сохраняем данные в JSON файл
-    with open(os.path.join("C:/Users/smoly/SBER_GIGA/LangChain-and-GigaChat/typst", "act.json"), "w", encoding="utf-8") as f:
+    # Сохраняем данные в JSON файл  
+    with open(os.path.join("C:/Users/smoly/LangChain/LangChain-and-GigaChat/typst", "act.json"), "w", encoding="utf-8") as f:
         json.dump(act_json, f, ensure_ascii=False)
     command = ["typst", "compile", "--root", "./typst", "typst/act.typ"]
     try:
@@ -110,7 +110,7 @@ def generate_pdf_invoice(customer: Customer, jobs: list[Job]) -> None:
             lambda j: asdict(j), jobs
         ))
     }
-    with open(os.path.join("C:/Users/smoly/SBER_GIGA/LangChain-and-GigaChat/typst", "invoice.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join("C:/Users/smoly/LangChain/LangChain-and-GigaChat/typst", "invoice.json"), "w", encoding="utf-8") as f:
         json.dump(invoice_json, f, ensure_ascii=False)
     command = ["typst", "compile", "--root", "./typst", "typst/invoice.typ"]
     try:
